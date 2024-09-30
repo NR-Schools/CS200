@@ -9,12 +9,12 @@ The Corn Leaf Disease Classifier is a web application designed to classify corn 
 - Upload an image of a corn leaf.
 - Preview the image before uploading.
 - Classify the image using the VGNet Model.
-- Display classification results with confidence.
+- Display classification results.
 
 ## Technologies Used
 
 - **Flask**: Python web framework used for building the application.
-- **Keras**: Deep learning library used for the VGNet Model.
+- **Tensorflow and Keras**: Deep learning library used for the VGNet Model.
 - **HTML/CSS/JavaScript**: For the frontend and user interface.
 
 ## Setup
@@ -63,7 +63,6 @@ The Corn Leaf Disease Classifier is a web application designed to classify corn 
 
 5. **Add your trained VGNet Model**:
     - Place your `vgnet_model.h5` file in the `app/vgnet_model` directory.
-    - Rename it to "model_001.h5"
 
 ### Running the Application
 
