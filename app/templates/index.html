@@ -1,52 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corn Leaf Disease Classifier</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
-        .upload-container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        #preview {
-            display: none;
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-            display: block; /* Ensure it is a block element */
-            margin-left: auto; /* Center horizontally */
-            margin-right: auto; /* Center horizontally */
-        }
-        .disabled-button {
-            background-color: #e0e0e0;
-            color: #a0a0a0;
-            cursor: not-allowed;
-        }
-        .model-info {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 16px;
-        }
-        .model-info h2 {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
+
 <body>
     <div class="upload-container">
         <h1>Corn Leaf Disease Classifier</h1>
         <div class="model-info">
-            <h2>About VGNet Model</h2>
-            <p>The VGNet Model is a state-of-the-art neural network designed for image classification tasks. It utilizes advanced deep learning techniques to achieve high accuracy in identifying and classifying images. In this application, the VGNet Model is used to detect and classify corn leaf diseases, providing valuable insights for agricultural management.</p>
+            <h2>VGNet Model</h2>
+            <p>This is a modified VGG-16 model that incorporates pre-trained weights, batch normalization, global
+                average pooling, and l2 regularization.</p>
         </div>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" id="file-input" name="image" accept="image/*" onchange="previewImage(event)">
-            <label for="file-input">Choose Image</label>
-            <button type="submit" id="upload-button" class="disabled-button" disabled>Upload</button>
+            <div class="btn-container">
+                <label for="file-input">Choose Image</label>
+                <button type="submit" id="upload-button" class="disabled-button" disabled>Upload</button>
+            </div>
         </form>
-        <img id="preview" alt="Image Preview" width="200px">
+        <div>
+            <img id="preview" alt="Image Preview" width="200px">
+        </div>
     </div>
 
     <script>
@@ -57,7 +36,7 @@
             var preview = document.getElementById('preview');
 
             if (file) {
-                reader.onload = function() {
+                reader.onload = function () {
                     preview.src = reader.result;
                     preview.style.display = 'block';
                 };
@@ -72,4 +51,5 @@
         }
     </script>
 </body>
+
 </html>
