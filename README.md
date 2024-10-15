@@ -61,8 +61,8 @@ The Corn Leaf Disease Classifier is a web application designed to classify corn 
     pip install -r requirements.txt
     ```
 
-5. **Add your trained VGNet Model**:
-    - Place your `vgnet_model.h5` file in the `app/vgnet_model` directory.
+5. **Add your trained VGNet Model(s)**:
+    - Place your models in the `app/models` directory.
 
 ### Running the Application
 

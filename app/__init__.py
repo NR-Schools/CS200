@@ -20,10 +20,13 @@ def upload_image():
     if image.filename == '':
         return redirect(request.url)
     
+    model_selected = request.form.get('model_select')
+    
     # Read the image as bytes (to preserve the file pointer for both classification and display)
     image_bytes = image.read()
     
     class_result = classify_image(
+        model_selected,
         Image.open(
             io.BytesIO(
                 image_bytes
@@ -35,6 +38,7 @@ def upload_image():
     result["class"] = class_result
     result["image"] = base64.b64encode(image_bytes).decode('utf-8')
     return render_template('uploaded.html', result=result)
+
 
 
 if __name__ == "__main__":
