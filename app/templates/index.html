@@ -11,11 +11,6 @@
 <body>
     <div class="upload-container">
         <h1>Corn Leaf Disease Classifier</h1>
-        <div class="model-info">
-            <h2>VGNet Model</h2>
-            <p>This is a modified VGG-16 model that incorporates pre-trained weights, batch normalization, global
-                average pooling, and L2 regularization.</p>
-        </div>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" id="file-input" name="image" accept="image/*" onchange="previewImage(event)">
             <div class="btn-container">
