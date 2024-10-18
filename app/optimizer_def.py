@@ -2,6 +2,8 @@
 import tensorflow as tf
 import keras
 
+
+# From https://github.com/cpuimage/keras-optimizer/blob/main/optimizer/Adan.py
 @keras.saving.register_keras_serializable()
 class Adan(tf.keras.optimizers.Optimizer):
     r"""Optimizer that implements the Adan algorithm.
